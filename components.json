@@ -1,0 +1,64 @@
+{
+  "components": [
+    {
+      "name": "CTA Section",
+      "description": "A call-to-action section to encourage user engagement.",
+      "file": "client/src/components/cta-section.tsx"
+    },
+    {
+      "name": "FAQ Section",
+      "description": "A section to display frequently asked questions.",
+      "file": "client/src/components/faq-section.tsx"
+    },
+    {
+      "name": "Footer",
+      "description": "The footer component for the website.",
+      "file": "client/src/components/footer.tsx"
+    },
+    {
+      "name": "Hero Section",
+      "description": "The hero section that introduces the website.",
+      "file": "client/src/components/hero-section.tsx"
+    },
+    {
+      "name": "Lead Capture Form",
+      "description": "A form to capture leads from users.",
+      "file": "client/src/components/lead-capture-form.tsx"
+    },
+    {
+      "name": "Navigation",
+      "description": "The navigation component for the website.",
+      "file": "client/src/components/navigation.tsx"
+    },
+    {
+      "name": "Problem Section",
+      "description": "A section that outlines the problems addressed by the service.",
+      "file": "client/src/components/problem-section.tsx"
+    },
+    {
+      "name": "Process Section",
+      "description": "A section that describes the process of the service.",
+      "file": "client/src/components/process-section.tsx"
+    },
+    {
+      "name": "Results Section",
+      "description": "A section showcasing results or testimonials.",
+      "file": "client/src/components/results-section.tsx"
+    },
+    {
+      "name": "Service Header",
+      "description": "A header component for service-related pages.",
+      "file": "client/src/components/service-header.tsx"
+    },
+    {
+      "name": "Solution Section",
+      "description": "A section that outlines the solutions provided.",
+      "file": "client/src/components/solution-section.tsx"
+    },
+    {
+      "name": "Value Proposition",
+      "description": "A section that highlights the value proposition.",
+      "file": "client/src/components/value-proposition.tsx"
+    }
+  ]
+}
