@@ -6,9 +6,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { useToast } from '@/hooks/use-toast';
-import { useMutation } from '@tanstack/react-query';
-import { apiRequest } from '@/lib/queryClient';
 
 const leadFormSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
@@ -17,12 +14,12 @@ const leadFormSchema = z.object({
   businessName: z.string().optional(),
   website: z.string().url('Please enter a valid URL').optional().or(z.literal('')),
   goals: z.string().optional(),
+  'bot-field': z.string().optional(), // For Netlify honeypot
 });
 
 type LeadFormData = z.infer<typeof leadFormSchema>;
 
 export default function LeadCaptureForm() {
-  const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const form = useForm<LeadFormData>({
@@ -34,31 +31,31 @@ export default function LeadCaptureForm() {
       businessName: '',
       website: '',
       goals: '',
+      'bot-field': '',
     },
   });
 
-  const submitLead = useMutation({
-    mutationFn: async (data: LeadFormData) => {
-      return apiRequest('POST', '/api/leads', data);
-    },
-    onSuccess: () => {
+  const onSubmit = async (data: LeadFormData) => {
+    // If honeypot is filled, treat as spam
+    if (data['bot-field']) return;
+
+    // Build form data for Netlify
+    const formData = new FormData();
+    formData.append('form-name', 'lead-capture');
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value ?? '');
+    });
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/x-www-form-urlencoded' },
+      });
       setIsSubmitted(true);
-      toast({
-        title: "Success!",
-        description: "Your growth plan request has been submitted. We'll contact you within 24 hours.",
-      });
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const onSubmit = (data: LeadFormData) => {
-    submitLead.mutate(data);
+    } catch {
+      alert('Something went wrong. Please try again or contact us directly.');
+    }
   };
 
   if (isSubmitted) {
@@ -78,7 +75,21 @@ export default function LeadCaptureForm() {
   }
 
   return (
-    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+    <form
+      onSubmit={form.handleSubmit(onSubmit)}
+      className="space-y-6"
+      name="lead-capture"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+      {/* Netlify hidden fields */}
+      <input type="hidden" name="form-name" value="lead-capture" />
+      <div style={{ display: 'none' }}>
+        <Label htmlFor="bot-field">Don’t fill this out if you're human:</Label>
+        <Input id="bot-field" {...form.register('bot-field')} />
+      </div>
+
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <Label htmlFor="firstName" className="text-left block font-medium">First Name *</Label>
@@ -157,10 +168,9 @@ export default function LeadCaptureForm() {
       
       <Button 
         type="submit" 
-        disabled={submitLead.isPending}
         className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-4 h-14 rounded-2xl text-lg font-semibold hover:shadow-xl hover:shadow-indigo-500/25 transition-all duration-300 transform hover:scale-105 border-0"
       >
-{submitLead.isPending ? 'Submitting...' : 'Start My Website Project'}
+        Start My Website Project
       </Button>
     </form>
   );

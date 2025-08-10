@@ -44,13 +44,11 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center space-x-2 cursor-pointer group">
-              <div className="w-8 h-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
-                <Zap className="text-white w-5 h-5" />
-              </div>
+              <img src="/logo.png" alt="Lead Company Logo" className="w-8 h-8 object-contain" />
               <span className={`text-lg font-semibold transition-colors ${
                 isScrolled ? 'text-gray-900 dark:text-white' : 'text-white'
               }`}>
-                AIWebCraft
+                LeadCompany
               </span>
             </div>
           </Link>

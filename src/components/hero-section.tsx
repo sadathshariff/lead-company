@@ -54,14 +54,7 @@ export default function HeroSection() {
 Get Started Today
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button 
-              variant="outline"
-              onClick={() => scrollToSection('process')}
-              className="group border-2 border-white/30 text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 px-8 py-4 h-16 text-lg font-medium rounded-2xl transition-all duration-300 hover:border-white/50"
-            >
-              <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-              See How It Works
-            </Button>
+           
           </div>
         </div>
         

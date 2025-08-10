@@ -9,15 +9,15 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <Zap className="text-white w-6 h-6" />
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-r from-primary-500 to-purple-600">
+                <img src="/logo.png" alt="Lead Company Logo" className="w-8 h-8 object-contain" />
               </div>
-              <span className="text-xl font-bold">AIWebCraft</span>
+              <span className="text-xl font-bold">Lead Company</span>
             </div>
             <p className="text-gray-400 mb-6">
               Building AI-powered websites that generate leads and grow businesses.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
@@ -30,7 +30,7 @@ export default function Footer() {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-            </div>
+            </div> */}
           </div>
           
           {/* Services */}
@@ -65,25 +65,19 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-2 text-gray-400">
-                <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-2 text-gray-400">
+             
+              <div className="flex  items-center space-x-2 text-gray-400 hover:text-white transition-colors cursor-pointer">
                 <Mail className="w-4 h-4" />
-                <span>hello@aiwebcraft.com</span>
+                <span>leadcompanywork@gmail.com</span>
               </div>
-              <div className="flex items-start space-x-2 text-gray-400">
-                <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span>123 Business Ave, Suite 100<br />Your City, ST 12345</span>
-              </div>
+              
             </div>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 AIWebCraft. All rights reserved. | 
+            © 2025  Lead Company. All rights reserved. | 
             <a href="#" className="hover:text-white transition-colors ml-1">Privacy Policy</a> | 
             <a href="#" className="hover:text-white transition-colors ml-1">Terms of Service</a>
           </p>
