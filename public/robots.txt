@@ -1,11 +1,9 @@
-User's request for the contents of the file /SiteCraft/SiteCraft/public/robots.txt:
-
-User's project specification indicates that the robots.txt file should provide instructions to web crawlers about which pages to crawl. Here’s a basic example of what the contents of the robots.txt file could look like:
-
-User's robots.txt file contents:
+# robots.txt for LeadCompany
 
 User-agent: *
 Disallow: /private/
 Allow: /
 
-This configuration allows all user agents (web crawlers) to access the site while disallowing access to the /private/ directory. Adjust the paths as necessary based on your project's structure and requirements.
+# This configuration allows all user agents (web crawlers) to access the site
+# while disallowing access to the /private/ directory.
+# Adjust the paths as necessary based on your project's structure

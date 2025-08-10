@@ -2,7 +2,7 @@
 
 ## Overview
 
-SiteCraft is a frontend React web application built with Vite and Tailwind CSS.
+LeadCompany is a frontend React web application built with Vite and Tailwind CSS.
 
 ## Getting Started
 
