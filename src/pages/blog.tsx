@@ -199,38 +199,7 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-800">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 rounded-3xl p-12 border border-blue-800/50 backdrop-blur-sm">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Stay Updated with
-              <span className="block bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                Latest Insights
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Get the latest digital marketing tips, SEO strategies, and business growth insights
-              delivered directly to your inbox every week.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 bg-gray-800/50 border-2 border-gray-600 rounded-2xl text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors"
-              />
-              <Button
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 h-14 text-lg font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25"
-              >
-                Subscribe
-              </Button>
-            </div>
-            <p className="text-sm text-gray-400 mt-4">
-              No spam, unsubscribe at any time. We respect your privacy.
-            </p>
-          </div>
-        </div>
-      </section>
+    
     </div>
   );
 }

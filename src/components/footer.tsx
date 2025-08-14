@@ -66,16 +66,17 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-16 pt-12 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2024 AutoFlow. All rights reserved.
+              © {new Date().getFullYear()} AutoFlow. All rights reserved.
             </p>
             <div className="flex items-center space-x-2 text-gray-400">
               <Mail className="w-4 h-4" />
               <a
                 href="mailto:leadcompanywork@gmail.com"
-                className="hover:text-white transition-colors cursor-pointer"
+                className="hover:text-white transition-colors"
               >
                 leadcompanywork@gmail.com
               </a>
