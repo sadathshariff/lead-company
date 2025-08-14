@@ -31,8 +31,8 @@ const stats = [
 const testimonials = [
   {
     icon: Globe,
-    title: "First Page Google Rankings",
-    quote: "Within 6 weeks, we ranked #3 for 'build website for business' in our local market. Phone calls increased by 180% and we're booking 3-4 new clients weekly.",
+    title: "Professional Online Presence",
+    quote: "They designed a website that looks modern, loads fast, and makes it easier for customers to contact us. We’ve already had great feedback from visitors.",
     author: "David Thompson",
     company: "Thompson Construction",
     avatar: "DT",
@@ -42,8 +42,8 @@ const testimonials = [
   },
   {
     icon: Users,
-    title: "Automated Lead Generation",
-    quote: "The AI chatbot captures leads while I sleep. We've increased our qualified leads by 250% and our sales team is closing more deals than ever before.",
+    title: "Leads Made Simple",
+    quote: "The AI chatbot has been a great addition. It collects customer details even after hours, so we never miss an opportunity to follow up.",
     author: "Sarah Chen",
     company: "Chen Marketing",
     avatar: "SC",
@@ -53,8 +53,8 @@ const testimonials = [
   },
   {
     icon: TrendingUp,
-    title: "Business Growth Acceleration",
-    quote: "Our website went from generating 5 leads per month to 25+ qualified leads. The ROI on this investment was immediate and continues to grow.",
+    title: "Easy to Work With",
+    quote: "They handled everything from setup to launch. The process was smooth, and now we have a site we can proudly share with clients.",
     author: "Mike Rodriguez",
     company: "Rodriguez Services",
     avatar: "MR",
@@ -63,6 +63,7 @@ const testimonials = [
     border: "border-green-800/50"
   }
 ];
+
 
 export default function ResultsSection() {
   return (
@@ -123,10 +124,7 @@ export default function ResultsSection() {
                         <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-medium text-white">
-                      <CheckCircle className="w-3 h-3" />
-                      Verified Client
-                    </div>
+                    
                   </div>
 
                   {/* Icon and Title */}
