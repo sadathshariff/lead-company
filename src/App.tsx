@@ -29,7 +29,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#f8fafc] to-[#e0e7ef] text-gray-900">
+        <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
           <Navigation />
           <main className="flex-1 w-full px-0 py-0">
             <Toaster />

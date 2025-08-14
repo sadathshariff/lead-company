@@ -1,86 +1,86 @@
-import { Link } from 'wouter';
-import { Zap, Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from 'lucide-react';
+import { Zap, Mail } from 'lucide-react';
 
 export default function Footer() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <footer className="bg-gray-900 text-white py-16">
+    <footer className="bg-gray-900 text-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-r from-primary-500 to-purple-600">
-                <img src="/logo.png" alt="Lead Company Logo" className="w-8 h-8 object-contain" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {/* Company Info */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                <Zap className="w-7 h-7 text-white" />
               </div>
-              <span className="text-xl font-bold">Lead Company</span>
+              <span className="text-2xl font-bold text-white">AutoFlow</span>
             </div>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-400 mb-8 text-lg leading-relaxed">
               Building AI-powered websites that generate leads and grow businesses.
+              Modern design meets intelligent automation.
             </p>
-            {/* <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-            </div> */}
           </div>
-          
+
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Services</h3>
-            <ul className="space-y-3">
-              <li><a href="/website-development" className="text-gray-400 hover:text-white transition-colors">Website Design</a></li>
-              <li><a href="/seo-optimization" className="text-gray-400 hover:text-white transition-colors">SEO Optimization</a></li>
-              <li><a href="/ai-lead-generation" className="text-gray-400 hover:text-white transition-colors">AI Integration</a></li>
-              <li><a href="/ai-lead-generation" className="text-gray-400 hover:text-white transition-colors">Lead Generation</a></li>
-              <li><a href="/#services" className="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
+            <h3 className="text-xl font-semibold text-white mb-6">Services</h3>
+            <ul className="space-y-4">
+              <li><button onClick={() => scrollToSection('services')} className="text-gray-400 hover:text-white transition-colors text-base text-left">Website Development</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="text-gray-400 hover:text-white transition-colors text-base text-left">AI Chatbot</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="text-gray-400 hover:text-white transition-colors text-base text-left">AI LeadGen Chatbot</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="text-gray-400 hover:text-white transition-colors text-base text-left">Voice Agent</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="text-gray-400 hover:text-white transition-colors text-base text-left">Review Management</button></li>
             </ul>
           </div>
-          
+
           {/* Company */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Company</h3>
-            <ul className="space-y-3">
-              <li><a href="/#about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/#process" className="text-gray-400 hover:text-white transition-colors">Our Process</a></li>
-              <li><a href="/#results" className="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+            <h3 className="text-xl font-semibold text-white mb-6">Company</h3>
+            <ul className="space-y-4">
               <li>
-                <Link href="/blog">
-                  <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Blog</span>
-                </Link>
+                <button onClick={() => scrollToSection('solution')} className="text-gray-400 hover:text-white transition-colors text-base text-left">
+                  How It Works
+                </button>
               </li>
-              <li><a href="/#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              <li>
+                <button onClick={() => scrollToSection('results')} className="text-gray-400 hover:text-white transition-colors text-base text-left">
+                  Case Studies
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection('faq')} className="text-gray-400 hover:text-white transition-colors text-base text-left">
+                  FAQ
+                </button>
+              </li>
+              <li>
+                <a href="/blog" className="text-gray-400 hover:text-white transition-colors text-base">
+                  Blog
+                </a>
+              </li>
             </ul>
           </div>
-          
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
-            <div className="space-y-3">
-             
-              <div className="flex  items-center space-x-2 text-gray-400 hover:text-white transition-colors cursor-pointer">
-                <Mail className="w-4 h-4" />
-                <span>leadcompanywork@gmail.com</span>
-              </div>
-              
+        </div>
+
+        <div className="border-t border-gray-800 mt-16 pt-12 text-center">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm">
+              © 2024 AutoFlow. All rights reserved.
+            </p>
+            <div className="flex items-center space-x-2 text-gray-400">
+              <Mail className="w-4 h-4" />
+              <a
+                href="mailto:leadcompanywork@gmail.com"
+                className="hover:text-white transition-colors cursor-pointer"
+              >
+                leadcompanywork@gmail.com
+              </a>
             </div>
           </div>
-        </div>
-        
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400">
-            © 2025  Lead Company. All rights reserved. | 
-            <a href="#" className="hover:text-white transition-colors ml-1">Privacy Policy</a> | 
-            <a href="#" className="hover:text-white transition-colors ml-1">Terms of Service</a>
-          </p>
         </div>
       </div>
     </footer>

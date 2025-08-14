@@ -47,7 +47,7 @@ export default function Home() {
       <ValueProposition />
       <ProblemSection />
       <SolutionSection />
-      <ProcessSection />
+      {/* <ProcessSection /> */}
       <ResultsSection />
       <FAQSection />
       <CTASection />

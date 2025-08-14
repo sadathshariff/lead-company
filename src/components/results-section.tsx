@@ -1,94 +1,189 @@
-import { TrendingUp, Globe, Bot } from 'lucide-react';
+import { Star, Globe, Users, TrendingUp, MessageSquare, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
-const testimonials = [
+const stats = [
   {
     icon: TrendingUp,
-    title: "250% Lead Increase",
-    quote: "After implementing their AI lead generation system, we increased our monthly leads from 12 to 42. The automated follow-up sequence alone converted 35% of our website visitors.",
-    author: "Jennifer Martinez",
-    role: "Marketing Agency Owner",
-    company: "Digital Growth Solutions",
-    gradient: "from-green-50 to-emerald-50",
-    border: "border-green-200",
-    iconColor: "text-green-500",
-    titleColor: "text-green-700"
+    value: "300%",
+    label: "Average Lead Increase",
+    description: "Our clients see dramatic improvements in lead generation"
+  },
+  {
+    icon: Users,
+    value: "24/7",
+    label: "AI Availability",
+    description: "Never miss a lead opportunity again"
   },
   {
     icon: Globe,
-    title: "First Page Google Rankings", 
-    quote: "Within 6 weeks, we ranked #3 for 'build website for business' in our local market. Phone calls increased by 180% and we're booking 3-4 new clients weekly.",
-    author: "David Thompson",
-    role: "Construction Company",
-    company: "Thompson Builders LLC",
-    gradient: "from-blue-50 to-indigo-50",
-    border: "border-blue-200",
-    iconColor: "text-blue-500",
-    titleColor: "text-blue-700"
+    value: "89%",
+    label: "Conversion Rate",
+    description: "Higher conversion rates than industry average"
   },
   {
-    icon: Bot,
-    title: "24/7 Lead Qualification",
-    quote: "The AI chatbot qualified 78% of our leads automatically, saving us 15 hours per week. Our sales team now focuses only on high-quality prospects ready to buy.",
-    author: "Rebecca Chen",
-    role: "SaaS Startup Founder",
-    company: "TechFlow Systems",
-    gradient: "from-purple-50 to-violet-50",
-    border: "border-purple-200",
-    iconColor: "text-purple-500",
-    titleColor: "text-purple-700"
+    icon: MessageSquare,
+    value: "2.5x",
+    label: "ROI Improvement",
+    description: "Better return on investment for our clients"
+  }
+];
+
+const testimonials = [
+  {
+    icon: Globe,
+    title: "First Page Google Rankings",
+    quote: "Within 6 weeks, we ranked #3 for 'build website for business' in our local market. Phone calls increased by 180% and we're booking 3-4 new clients weekly.",
+    author: "David Thompson",
+    company: "Thompson Construction",
+    avatar: "DT",
+    rating: 5,
+    gradient: "from-blue-900/30 to-indigo-900/30",
+    border: "border-blue-800/50"
+  },
+  {
+    icon: Users,
+    title: "Automated Lead Generation",
+    quote: "The AI chatbot captures leads while I sleep. We've increased our qualified leads by 250% and our sales team is closing more deals than ever before.",
+    author: "Sarah Chen",
+    company: "Chen Marketing",
+    avatar: "SC",
+    rating: 5,
+    gradient: "from-purple-900/30 to-pink-900/30",
+    border: "border-purple-800/50"
+  },
+  {
+    icon: TrendingUp,
+    title: "Business Growth Acceleration",
+    quote: "Our website went from generating 5 leads per month to 25+ qualified leads. The ROI on this investment was immediate and continues to grow.",
+    author: "Mike Rodriguez",
+    company: "Rodriguez Services",
+    avatar: "MR",
+    rating: 5,
+    gradient: "from-green-900/30 to-blue-900/30",
+    border: "border-green-800/50"
   }
 ];
 
 export default function ResultsSection() {
   return (
-    <section id="results" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            Real Results: How Businesses <span className="gradient-text">Get More Leads</span> with Our Websites
+    <section id="results" className="py-32 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-600/5 via-blue-600/5 to-transparent"></div>
+        <div className="absolute top-20 right-20 w-72 h-72 bg-green-500/5 rounded-full blur-3xl animate-pulse-slow parallax-bg"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse-slow parallax-bg" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-24">
+          <div className="inline-flex items-center gap-2 bg-green-900/30 text-green-300 px-6 py-3 rounded-full text-sm font-medium mb-8 animate-bounce-in">
+            <Star className="w-4 h-4" />
+            Real Results
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight animate-fade-in-up">
+            See How Businesses
+            <span className="block bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent gradient-text">
+              Get More Leads
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our clients consistently see significant improvements in lead generation and business growth through strategic implementation of SEO-optimized websites with AI-powered automation systems.
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed animate-fade-in-up">
+            Our clients consistently see significant improvements in lead generation and business growth
+            through strategic implementation of SEO-optimized websites with AI-powered automation systems.
           </p>
         </div>
-        
-        <div className="grid lg:grid-cols-3 gap-8 items-start mb-16">
-          <div className="lg:col-span-1">
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-8 h-48 flex flex-col justify-center items-center">
-              <div className="text-4xl font-bold text-indigo-600 mb-2">500+</div>
-              <div className="text-lg font-semibold text-gray-700 mb-1">Businesses Served</div>
-              <div className="text-sm text-gray-500 text-center">Average 200% lead increase in 90 days</div>
-            </div>
-          </div>
-          
-          <div className="lg:col-span-2 space-y-6">
-            {testimonials.map((testimonial, index) => {
-              const Icon = testimonial.icon;
-              return (
-                <Card key={index} className={`bg-gradient-to-r ${testimonial.gradient} border ${testimonial.border} hover:shadow-lg transition-shadow duration-300`}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-3">
-                      <Icon className={`${testimonial.iconColor} w-6 h-6 mt-1 flex-shrink-0`} />
-                      <div>
-                        <h3 className={`text-lg font-bold ${testimonial.titleColor} mb-1`}>
-                          {testimonial.title}
-                        </h3>
-                        <p className="text-gray-700 mb-3 text-sm leading-relaxed">
-                          "{testimonial.quote}"
-                        </p>
-                        <p className="text-sm font-semibold text-gray-600">
-                          — {testimonial.author}, {testimonial.role}
-                        </p>
-                        <p className="text-xs text-gray-500">
-                          {testimonial.company}
-                        </p>
-                      </div>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <div key={index} className="text-center p-8 bg-gray-900/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 animate-fade-in-up border border-gray-700 card-hover hover-lift" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <Icon className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors duration-500" />
+                </div>
+                <div className="text-4xl font-bold text-white mb-3">{stat.value}</div>
+                <div className="text-blue-300 font-semibold mb-3 text-lg">{stat.label}</div>
+                <p className="text-gray-400 text-base">{stat.description}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Testimonials */}
+        <div className="grid lg:grid-cols-3 gap-10 mb-24">
+          {testimonials.map((testimonial, index) => {
+            const Icon = testimonial.icon;
+            return (
+              <Card key={index} className={`bg-gradient-to-br ${testimonial.gradient} border-2 ${testimonial.border} hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group h-full animate-fade-in-up backdrop-blur-sm card-hover hover-lift`} style={{ animationDelay: `${index * 0.1}s` }}>
+                <CardContent className="p-10 h-full flex flex-col">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-2">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                      ))}
                     </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                    <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-medium text-white">
+                      <CheckCircle className="w-3 h-3" />
+                      Verified Client
+                    </div>
+                  </div>
+
+                  {/* Icon and Title */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                      <Icon className="w-7 h-7 text-white group-hover:text-blue-200 transition-colors duration-500" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white group-hover:text-blue-200 transition-colors duration-500">
+                      {testimonial.title}
+                    </h3>
+                  </div>
+
+                  {/* Quote */}
+                  <blockquote className="text-gray-200 mb-8 text-base leading-relaxed italic flex-grow group-hover:text-white transition-colors duration-500">
+                    "{testimonial.quote}"
+                  </blockquote>
+
+                  {/* Company Badge */}
+                  <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 text-xs font-medium text-white mt-auto mb-6 group-hover:bg-white/30 transition-all duration-500">
+                    <span className="font-semibold">{testimonial.company}</span>
+                  </div>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-base group-hover:scale-110 transition-transform duration-500">
+                      {testimonial.avatar}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-white text-lg group-hover:text-blue-200 transition-colors duration-500">{testimonial.author}</div>
+                      <div className="text-gray-300 text-base group-hover:text-white transition-colors duration-500">Business Owner</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-24 animate-fade-in-up">
+          <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-16 shadow-lg border border-gray-700 max-w-4xl mx-auto card-hover hover-lift">
+            <h3 className="text-4xl font-bold text-white mb-6">
+              Ready to Get the Same Results?
+            </h3>
+            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+              Get the same results for your business. Our proven system works for companies
+              of all sizes across every industry.
+            </p>
+            <button
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-10 py-5 rounded-2xl font-semibold text-xl transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-green-500/25 btn-primary hover-glow"
+            >
+              Start Growing Today
+            </button>
           </div>
         </div>
       </div>

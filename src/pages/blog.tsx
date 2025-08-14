@@ -1,121 +1,236 @@
-import Navigation from '@/components/navigation';
-import Footer from '@/components/footer';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, User } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, User, Tag } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 
 const blogPosts = [
   {
-    id: 1,
-    title: "10 SEO Best Practices for Small Business Websites in 2024",
-    description: "Discover the latest SEO strategies that actually work for small businesses to rank higher on Google and attract more customers.",
-    author: "Sarah Johnson",
-    date: "2024-01-15",
+    title: "10 Ways to Increase Website Conversion Rates in 2024",
+    excerpt: "Discover proven strategies to turn more website visitors into paying customers with these conversion optimization techniques.",
+    author: "SiteCraft Team",
+    date: "March 15, 2024",
+    readTime: "5 min read",
+    category: "Conversion Optimization",
+    image: "📈"
+  },
+  {
+    title: "The Complete Guide to AI-Powered Lead Generation",
+    excerpt: "Learn how artificial intelligence is revolutionizing lead generation and how to implement it in your business.",
+    author: "SiteCraft Team",
+    date: "March 10, 2024",
     readTime: "8 min read",
-    category: "SEO",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+    category: "AI & Automation",
+    image: "🤖"
   },
   {
-    id: 2,
-    title: "How AI Chatbots Can Triple Your Website Lead Generation",
-    description: "Learn how implementing AI-powered chatbots on your website can significantly increase lead capture and customer engagement.",
-    author: "Mike Chen",
-    date: "2024-01-10",
+    title: "SEO Best Practices for 2024: What's Changed?",
+    excerpt: "Stay ahead of the competition with these updated SEO strategies that work in 2024 and beyond.",
+    author: "SiteCraft Team",
+    date: "March 5, 2024",
     readTime: "6 min read",
-    category: "AI Tools",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+    category: "SEO",
+    image: "🔍"
   },
   {
-    id: 3,
-    title: "Website Speed Optimization: Why Every Second Counts",
-    description: "Explore the impact of website loading speed on user experience, SEO rankings, and conversion rates with actionable optimization tips.",
-    author: "Lisa Rodriguez",
-    date: "2024-01-05",
-    readTime: "10 min read",
-    category: "Performance",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
-  },
-  {
-    id: 4,
-    title: "Converting Visitors to Leads: Design Psychology That Works",
-    description: "Understand the psychological principles behind high-converting website designs and how to apply them to your business website.",
-    author: "David Kim",
-    date: "2023-12-28",
+    title: "Building a High-Converting Landing Page: Step-by-Step Guide",
+    excerpt: "Follow our proven framework to create landing pages that convert visitors into leads and customers.",
+    author: "SiteCraft Team",
+    date: "February 28, 2024",
     readTime: "7 min read",
-    category: "Design",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+    category: "Web Design",
+    image: "🎯"
+  },
+  {
+    title: "How to Choose the Right Website Development Partner",
+    excerpt: "Make the right choice for your business website with these essential criteria for selecting a development partner.",
+    author: "SiteCraft Team",
+    date: "February 20, 2024",
+    readTime: "4 min read",
+    category: "Business",
+    image: "🤝"
+  },
+  {
+    title: "The Future of Digital Marketing: AI, Automation, and Personalization",
+    excerpt: "Explore the emerging trends that will shape digital marketing in the coming years and how to prepare.",
+    author: "SiteCraft Team",
+    date: "February 15, 2024",
+    readTime: "9 min read",
+    category: "Digital Marketing",
+    image: "🚀"
   }
+];
+
+const categories = [
+  "All Posts",
+  "Conversion Optimization",
+  "AI & Automation",
+  "SEO",
+  "Web Design",
+  "Business",
+  "Digital Marketing"
 ];
 
 export default function Blog() {
   return (
-    <div className="min-h-screen bg-gray-50">
-  
-      
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-primary-900 via-purple-900 to-secondary-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Website Growth <span className="gradient-text">Insights</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Expert tips, strategies, and insights to help your business website generate more leads and grow your online presence.
-          </p>
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-600/10 via-indigo-600/5 to-transparent"></div>
+          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-900/30 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
+              📚 Blog & Insights
+            </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+              Expert Insights on
+              <span className="block bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                Digital Growth
+              </span>
+            </h1>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-12">
+              Discover proven strategies, industry insights, and actionable tips to help your business
+              grow online and generate more leads.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button
+                onClick={() => window.location.href = '/#contact'}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 h-14 text-lg font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25"
+              >
+                Get Started Today
+                <ArrowRight className="ml-3 w-6 h-6" />
+              </Button>
+              <Button
+                variant="outline"
+                className="border-2 border-gray-400 hover:border-gray-300 text-gray-300 hover:text-white px-8 py-4 h-14 text-lg font-semibold rounded-2xl transition-all duration-300 hover:bg-white/10"
+              >
+                Subscribe to Newsletter
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Blog Posts */}
-      <section className="py-20">
+      {/* Categories Filter */}
+      <section className="py-12 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {blogPosts.map((post) => (
-              <Card key={post.id} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge variant="secondary">{post.category}</Badge>
-                    <div className="flex items-center text-sm text-gray-500 space-x-4">
-                      <div className="flex items-center space-x-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>{new Date(post.date).toLocaleDateString()}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Clock className="w-4 h-4" />
-                        <span>{post.readTime}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <CardTitle className="text-xl group-hover:text-primary-600 transition-colors">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {post.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <User className="w-4 h-4 text-gray-500" />
-                      <span className="text-sm text-gray-600">{post.author}</span>
-                    </div>
-                    <button className="text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors">
-                      Read More →
-                    </button>
-                  </div>
-                </CardContent>
-              </Card>
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map((category, index) => (
+              <button
+                key={index}
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${index === 0
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white border border-gray-700'
+                  }`}
+              >
+                {category}
+              </button>
             ))}
           </div>
         </div>
       </section>
 
-    
+      {/* Blog Posts Grid */}
+      <section className="py-24 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post, index) => (
+              <Card key={index} className="bg-gray-900/50 backdrop-blur-sm border-2 border-gray-700 hover:border-gray-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full group">
+                <CardContent className="p-8 h-full flex flex-col">
+                  <div className="text-4xl mb-4">{post.image}</div>
+
+                  <div className="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                    <div className="flex items-center gap-2">
+                      <Tag className="w-4 h-4" />
+                      <span>{post.category}</span>
+                    </div>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
+                    {post.title}
+                  </h3>
+
+                  <p className="text-gray-300 leading-relaxed mb-6 flex-grow">
+                    {post.excerpt}
+                  </p>
+
+                  <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                    <div className="flex items-center gap-2">
+                      <User className="w-4 h-4" />
+                      <span>{post.author}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>{post.date}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-sm text-gray-400">
+                      <Clock className="w-4 h-4" />
+                      <span>{post.readTime}</span>
+                    </div>
+
+                    <Button
+                      variant="ghost"
+                      className="text-blue-400 hover:text-blue-300 p-0 h-auto font-medium group-hover:translate-x-1 transition-transform"
+                    >
+                      Read More
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Load More Button */}
+          <div className="text-center mt-16">
+            <Button
+              variant="outline"
+              className="border-2 border-gray-400 hover:border-gray-300 text-gray-300 hover:text-white px-8 py-4 h-14 text-lg font-semibold rounded-2xl transition-all duration-300 hover:bg-white/10"
+            >
+              Load More Posts
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter CTA */}
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-800">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 rounded-3xl p-12 border border-blue-800/50 backdrop-blur-sm">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Stay Updated with
+              <span className="block bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                Latest Insights
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Get the latest digital marketing tips, SEO strategies, and business growth insights
+              delivered directly to your inbox every week.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-6 py-4 bg-gray-800/50 border-2 border-gray-600 rounded-2xl text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors"
+              />
+              <Button
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 h-14 text-lg font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25"
+              >
+                Subscribe
+              </Button>
+            </div>
+            <p className="text-sm text-gray-400 mt-4">
+              No spam, unsubscribe at any time. We respect your privacy.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
