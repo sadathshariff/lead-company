@@ -43,7 +43,7 @@ export default function Navigation() {
     }
   };
 
-  const handleClick = (e) => {
+  const handleClick = (e:any) => {
     e.preventDefault();
     navigate("/");
     window.scrollTo({ top: 0, behavior: "smooth" });
