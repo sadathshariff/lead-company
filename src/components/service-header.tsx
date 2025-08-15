@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { ArrowLeft, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -12,7 +12,7 @@ export default function ServiceHeader({ serviceName }: ServiceHeaderProps) {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link href="/">
+            <Link to="/">
               <Button variant="ghost" size="sm" className="flex items-center gap-2">
                 <ArrowLeft className="w-4 h-4" />
                 Back to Home
@@ -24,17 +24,17 @@ export default function ServiceHeader({ serviceName }: ServiceHeaderProps) {
             </h1>
           </div>
           <nav className="hidden md:flex items-center gap-2">
-            <Link href="/seo-optimization">
+            <Link to="/seo-optimization">
               <Button variant="ghost" size="sm" className="text-sm">
                 SEO
               </Button>
             </Link>
-            <Link href="/ai-lead-generation">
+            <Link to="/ai-lead-generation">
               <Button variant="ghost" size="sm" className="text-sm">
                 AI Leads
               </Button>
             </Link>
-            <Link href="/website-development">
+            <Link to="/website-development">
               <Button variant="ghost" size="sm" className="text-sm">
                 Development
               </Button>

@@ -1,6 +1,7 @@
 import { ArrowRight, Code, Smartphone, Zap, Target, CheckCircle, Globe, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const features = [
   {
@@ -66,7 +67,17 @@ const developmentProcess = [
 ];
 
 export default function WebsiteDevelopment() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToSection = (sectionId: string) => {
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } });
+      return;
+    }
+
+    // If we're already on home page, scroll to section
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

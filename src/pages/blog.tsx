@@ -1,6 +1,7 @@
 import { ArrowRight, Calendar, Clock, User, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
 
 const blogPosts = [
   {
@@ -70,6 +71,19 @@ const categories = [
 ];
 
 export default function Blog() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/');
+    // Scroll to contact section after navigation
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
       {/* Hero Section */}
@@ -81,7 +95,7 @@ export default function Blog() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16  pt-10">
             <div className="inline-flex items-center gap-2 bg-blue-900/30 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
               📚 Blog & Insights
             </div>
@@ -97,18 +111,13 @@ export default function Blog() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
-                onClick={() => window.location.href = '/#contact'}
+                onClick={handleGetStarted}
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 h-14 text-lg font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25"
               >
                 Get Started Today
                 <ArrowRight className="ml-3 w-6 h-6" />
               </Button>
-              <Button
-                variant="outline"
-                className="border-2 border-gray-400 hover:border-gray-300 text-gray-300 hover:text-white px-8 py-4 h-14 text-lg font-semibold rounded-2xl transition-all duration-300 hover:bg-white/10"
-              >
-                Subscribe to Newsletter
-              </Button>
+
             </div>
           </div>
         </div>
@@ -199,7 +208,7 @@ export default function Blog() {
         </div>
       </section>
 
-    
+
     </div>
   );
 }

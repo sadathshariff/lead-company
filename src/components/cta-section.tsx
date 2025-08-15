@@ -83,15 +83,7 @@ export default function CTASection() {
               >
                 Schedule a Call
               </button>
-              <button
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="border-2 border-gray-400 hover:border-gray-300 text-gray-300 hover:text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-500 hover:bg-white/10 hover-glow"
-              >
-                View Portfolio
-              </button>
+
             </div>
           </div>
         </div>

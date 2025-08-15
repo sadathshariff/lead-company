@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const faqs = [
 	{
-	question: 'How long does it take to build my website?',
-	answer:
-		'Most projects are completed in about 10–14 days, depending on the scope and features. This covers strategy, design, development, AI integration, and testing. Our accelerated process gets you generating leads quickly while ensuring everything is built to last.',
-},
+		question: 'How long does it take to build my website?',
+		answer:
+			'Most projects are completed in about 10–14 days, depending on the scope and features. This covers strategy, design, development, AI integration, and testing. Our accelerated process gets you generating leads quickly while ensuring everything is built to last.',
+	},
 
 	{
 		question: 'Do you provide ongoing support after launch?',
@@ -20,7 +20,7 @@ const faqs = [
 	{
 		question: 'How much does it cost?',
 		answer:
-			'Our pricing varies based on your specific needs, but typically ranges from $3,000-$8,000 for a complete website with AI lead generation. This includes design, development, AI integration, and 3 months of support. We also offer flexible payment plans.',
+			'Our plans are designed to fit businesses of all sizes — starting from just $99/month. You only pay for what you need.',
 	},
 	{
 		question: 'What makes your websites different from others?',
